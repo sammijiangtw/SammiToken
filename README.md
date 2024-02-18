@@ -1,0 +1,2 @@
+# SammiToken
+is erc20
