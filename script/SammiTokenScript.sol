@@ -8,14 +8,13 @@ contract SammiTokenScript is Script {
     function setUp() public {}
 
     function run() public {
-        // vm.broadcast();
         uint privateKey = vm.envUint("PRIVATE_KEY");
         address account = vm.addr(privateKey);
         console.log("Account", account);
 
         vm.startBroadcast(privateKey);
         SammiToken st = new SammiToken();
-        st.mint(account, 100);
+        st.mint(account, (100 * 10 ** uint256(st.decimals())));
         vm.stopBroadcast();
     }
 }

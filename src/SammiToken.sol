@@ -22,7 +22,7 @@ contract SammiToken is ERC20 {
             revert OnlyDeployerCanMintOver10();
         }
 
-        _mint(to, amount);
+        _mint(to, amount * 10 ** uint256(decimals()));
 
         console.log(startGas - gasleft());
     }
